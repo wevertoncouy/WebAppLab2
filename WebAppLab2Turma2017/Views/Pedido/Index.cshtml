@@ -1,0 +1,51 @@
+﻿@model IEnumerable<WebAppLab2Turma2017.Models.Pedido>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Cliente.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataPedido)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataEnvio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataEntrega)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cliente.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataPedido)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataEnvio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataEntrega)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PedidoID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PedidoID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PedidoID })
+        </td>
+    </tr>
+}
+
+</table>

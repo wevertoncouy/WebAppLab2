@@ -1,0 +1,30 @@
+﻿@model IEnumerable<WebAppLab2Turma2017.Models.Cliente>
+
+<h1>
+   Clientes Maiores de 18 Anos
+</h1>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Idade)
+        </th>
+       
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Idade)
+        </td>
+        <td>
+     
+    </tr>
+}
+
+</table>
